@@ -7,8 +7,8 @@
         "parameters": 
         {
             "name": "Test",
-            "mailmerge_docx": "submodels/MailMerge/Tests/MailMergeTemplate.docx", 
-            "upload_data": "submodels/MailMerge/Tests/upload_data.xlsx",
+            "mailmerge_docx": "MailMerge/Tests/MailMergeTemplate.docx",
+            "upload_data": "MailMerge/Tests/upload_data.xlsx",
             "calculate": true
         }
     }

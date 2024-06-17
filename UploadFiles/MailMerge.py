@@ -2,7 +2,7 @@ from datetime import datetime
 from babel.numbers import decimal, format_decimal
 
 from generic_app.models import *
-from ProcessAdminRestApi.models.upload_model import UploadModelMixin, ConditionalUpdateMixin
+from generic_app.generic_models.upload_model import UploadModelMixin, ConditionalUpdateMixin
 from mailmerge import MailMerge as Merge
 import pandas as pd
 import shutil
@@ -47,7 +47,7 @@ class MailMerge(ConditionalUpdateMixin, UploadModelMixin, Model):
 
 
     def create_mails(self):
-        from generic_app.submodels.MailMerge.MailDocuments.Mail import Mail
+        from MailMerge.MailDocuments.Mail import Mail
         Mail.objects.filter(mail_merge=self).delete()
         shutil.rmtree(settings.MEDIA_ROOT + os.sep + self.file_path(), ignore_errors=True)
         df = pd.read_excel(self.upload_data)
@@ -72,7 +72,7 @@ class MailMerge(ConditionalUpdateMixin, UploadModelMixin, Model):
 
     def bulk_create_pdfs_for_mail_merge(self):
         token = MailMerge.exchange_jwt()
-        from generic_app.submodels.MailMerge.MailDocuments.Mail import Mail
+        from MailMerge.MailDocuments.Mail import Mail
         mails = Mail.objects.filter(mail_merge=self)
         doc_names = []
         for mail in mails:

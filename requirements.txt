@@ -2,3 +2,4 @@ PyPDF2
 docx-mailmerge
 pikepdf
 babel
+git+https://github.com/LundIT/lex-app@v1.0.0

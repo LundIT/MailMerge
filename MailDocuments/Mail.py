@@ -1,5 +1,5 @@
 from generic_app.models import *
-from generic_app.submodels.MailMerge.UploadFiles.MailMerge import MailMerge
+from MailMerge.UploadFiles.MailMerge import MailMerge
 from mailmerge import MailMerge as Merge
 from django.core.files.base import ContentFile
 

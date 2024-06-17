@@ -1,4 +1,4 @@
-from ProcessAdminRestApi.tests.ProcessAdminTestCase import ProcessAdminTestCase
+from generic_app.tests.ProcessAdminTestCase import ProcessAdminTestCase
 
 class upload_test(ProcessAdminTestCase):
 
